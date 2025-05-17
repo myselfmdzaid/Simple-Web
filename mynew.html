@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance CSS</title>
+    <style>
+        body {
+            background-color: #ACCFE3;
+            font-family: Arial, sans-serif;
+            margin: 25px;
+        }
+        #example1 {
+            background-image: url(images/ChatGPT.png), url(images/bird-wings-flying-feature.gif);
+            background-repeat: no-repeat, repeat, repeat;
+            background-size: 50%, 100%, 100%;
+            background-color: #cccccc;
+            background-size: 250px, 250px;
+            background-position: left;
+            padding: 15px;
+            color: rgb(0, 0, 0);
+            box-shadow: 0px 0px 15px currentcolor;
+            border: 5px solid currentcolor;
+            padding: 15px;
+            animation-name: chatgpt;
+            animation-duration: 10s;
+            animation-delay: 1s;
+            background-position: center;
+        }
+
+        @keyframes chatgpt {
+            from {background-position: left;}
+            to {background-position: center;}
+        }
+
+        #example2{
+            border: 1px solid red;
+            padding:10px;
+            text-align: left;
+            font-family: cursive;
+        }
+
+        span {
+            border: inherit;
+            padding: 10px;
+        }
+
+        #grad1 {
+            text-align:center;
+            margin:auto;
+            color:#ffffff;
+            font-size:30px;
+            font-weight:bold;
+            padding: 20px;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border: 5px solid #000000;
+            border-radius: 10px;
+            text-shadow: 3px 3px 1px #000000;
+            transition: 2s; /* Smooth transition for width change */
+        }
+
+        #grad1:hover {
+            background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            color: #000000;
+            text-shadow: -3px 3px 1px #ffffff;
+            border-radius: 60px;
+            border: 5px dashed #ffffff;
+            box-shadow: 0px 0px 10px #ffffff;
+        }
+
+        #grad2{
+            padding: 20px;
+            background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+            font-size:30px;
+            border: 5px solid #000000;
+            border-radius: 10px;
+            text-shadow: 3px 3px 1px #000000;
+            color: #ACCFE3;
+            transition: 2s; /* Smooth transition for width change */
+        }
+
+        #grad2:hover {
+            background-image: linear-gradient(to right, rgba(255,0,0,1), rgba(255, 0, 0, 0));
+            color: #ff0000;
+            text-shadow: -3px 3px 1px #ffffff;
+            border-radius: 60px;
+            border: 5px dashed #ffffff;
+            box-shadow: 0px 0px 10px #ffffff;
+        }
+
+        .test {
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 20px;
+            width: 200px;
+            padding: 20px;
+            border: 5px solid #000000;
+            text-shadow: 3px 3px 1px #00000075;
+            overflow: hidden; /* Prevents overflow */
+            white-space: nowrap; /* Prevents text wrapping */
+            text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+            transition: 2s; /* Smooth transition for width change */
+            text-align: center; /* Center text inside the div */
+            font-family:Verdana, Geneva, Tahoma, sans-serif, Courier; /* Monospace font for better readability */
+            font-weight: bold; /* Makes the text bold */
+        }
+
+        .test:hover {
+            width: 600px; /* Expands width on hover */
+            overflow: visible,2s; /* Allows overflow on hover */
+            border-radius: 35px;
+            border: #ffffff dashed 5px;
+            box-shadow: 0px 0px 10px #000000;
+            color: #ffffff; /* Changes text color on hover */
+            background-color: #000000; /* Changes background color on hover */
+            text-shadow: -3px 3px 1px #00d9ff75; /* Adds shadow to text on hover */
+        }
+
+        h1{
+            text-align: center;
+            color: #000000;
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 3px 3px 1px #00000075;
+        }
+        .round {
+            border-radius: 50%;
+            background-color: #000000;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 201, 201);
+            margin: 0 auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+            color: rgb(18, 32, 228);
+            transition: 2s;
+        }
+
+
+        .container:has(h1:hover) .box {
+            box-shadow: 0 0 50px rgb(255, 0, 0);
+            border-radius: 50%;
+        }
+
+        .boxx {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 201, 201);
+            
+            margin: 0 auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+            color: rgb(18, 32, 228);
+            transition: 2s;
+        }
+
+        .containerr:has(h1:hover) .boxx {
+            box-shadow: 0 0 50px rgb(255, 0, 0);
+            transform: rotate(360deg);
+            border-radius: 50%;
+        }
+
+        .ground {
+            width: 100%;
+            height: 300px;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        .p1 {
+            width: 20px;
+            height: 200px;
+            margin-top: 50px;
+            margin-left: 50px;
+            background-color: #ff0000;
+            box-shadow: 5px 0px 10px #000000;
+            float: left;
+            animation-name: anip1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+
+        }
+
+        .p2 {
+            width: 20px;
+            height: 200px;
+            margin-top: 50px;
+            margin-right: 50px;
+            background-color: #ff0000;
+            float: right;
+            box-shadow: -5px 0px 10px #000000;
+            animation-name: anip2;
+            animation-duration: 1s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+
+        }
+
+
+        .ball {
+            height: 100px;
+            width: 100px;
+            margin-left: 10%;
+            text-align: center;
+            font-size: 20px;
+            color: azure;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #ff0000;
+            line-height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            text-shadow: #000000 3px 3px 1px;
+            box-shadow: 0px 0px 10px #000000;
+            transform: translateX(-50%);
+            animation-name: aniBall;
+            animation-duration: 2s;
+            animation-delay: 0.7s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            
+        }
+
+        @keyframes aniBall {
+            from {margin-left: 7%;}
+            to {margin-left: 93.1%;}
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            color: #000000;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 3px 3px 1px #00000075;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 250px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px;
+            position: absolute;
+            z-index: -1;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -140px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 80%;
+        }
+
+        .mhimage {
+            width: 25%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 25px;
+            box-shadow: 0px 0px 10px #000000;
+            
+        }
+
+        .gpt {
+            float: left;
+            clip-path: circle(34%);
+            shape-outside: circle(45%);
+        }
+
+        .gptdiv {
+            border: 5px solid green;
+            padding: 10px;
+        }
+
+        .polaroid {
+            width: 28.5%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
+            display: block;
+            margin: auto;
+            filter: blur(5px);
+            transition: 1s;
+            border-radius: 15px;
+            border: 10px solid #ffffff;
+        }
+        
+        .container2 {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .polaroid:hover {
+            box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.5), 0 10px 15px 0 rgba(0, 0, 0, 0.5);
+            filter: blur(0px);
+            border-radius: 15px;
+            border: 10px solid #ffffff;
+        }
+
+        .polaroid2 {
+            width: 28.5%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
+            display: block;
+            margin: auto;
+            filter: blur(0px);
+            filter: brightness(1.05);
+            filter: contrast(0.95);
+            filter: saturate(0.7);
+            filter: sepia(0.2);
+            filter: hue-rotate(350deg);
+            transition: 1s;
+            border-radius: 15px;
+            border: 10px solid #ffffff;
+        }
+        
+        .container3 {
+            text-align: center;
+            padding: 10px 20px;
+            color: #FFD700;
+        }
+
+        .polaroid2:hover {
+            background-color: #121212;
+            box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.5), 0 10px 15px 0 rgba(0, 0, 0, 0.5);
+            filter: blur(0px);
+            border-radius: 15px;
+            border: 10px solid #121212;
+            filter: brightness(0.9);
+            filter: contrast(1.2);
+            filter: saturate(0.8);
+            filter: sepia(0.1);
+            filter: hue-rotate(-5deg);
+        }
+
+        .pgold{
+            font-family:cursive; 
+            font-size: 30px;
+        }
+
+        .buttonhovernsee {
+            background-color: #140002;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 25px;
+            margin: auto;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px #000000;
+        }
+
+        .buttonhovermeimgdiv {
+            width: 25%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .buttonhovermeimgdiv .buttonhovermeimg {
+            visibility: hidden;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: -10px;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            box-shadow: 0px 0px 10px #000000;
+            opacity: 0%;
+            transition: 1s;
+        }
+
+        .buttonhovermeimgdiv:hover .buttonhovermeimg {
+            visibility: visible;
+            opacity: 100%;            
+        }
+        
+    </style>
+    </head>
+    <body>
+
+    <h1>Multiple Backgrounds</h1>
+    <p>The following div element has two background images:</p>
+
+    <div id="example1">
+    <h1><br></h1>
+    <p>ACADEMY OF INFORMATION TECHNOLOGY INNOVATION IN EDUCATION We are in training since 20+ years in Computer Programming & Hardware Networking Microsoft .NET, Android development, C, C++ MS SQL SERVER & CISCO'</p>
+    </div>
+
+    <br><br><br><br>
+
+    <div id="example2">
+        AIT <span>Academy of Information Technology's</span> border settings will also be inherited from 
+        the parent element. AIT
+    </div>
+
+    <br><br><br><br>
+
+    <div>
+        <p id="grad1">
+            Academy of Information Technology border settings will also be inherited from the parent element
+        </p>
+    </div>
+
+    <br><br><br><br>
+
+    <div>
+        <p id="grad2">
+            To add transparency, we use the rgba() function to 
+            define the color stops. The last parameter in the rgba() function can be a value from 
+            0 to 1, and it defines the transparency of the color: 0 indicates full transparency, 
+            1 indicates full color (no transparency).
+        </p>
+    </div>
+
+    <br><br><br><br>
+
+    <pre class="test" style="text-overflow:clip; margin-left: 31%;">
+        ACADEMY OF INFORMATION TECHNOLOGY! ACADE <br>
+        I am Student of AIT <br>
+        ACADEMY OF INFORMATION TECHNOLOGY! ACADE
+    </pre>
+    <br><br><br><br>    
+
+    <div class="container">
+        <h1 style="text-align: center;">Hover Me...</h1>
+        <div class="box">BOX</div>
+        <h1 style="text-align: center;">Hover Me...</h1>
+    </div>
+
+    <div class="containerr">
+        <h1 style="text-align: center;">Hover Me...</h1>
+        <div class="boxx">BOX</div>
+        <h1 style="text-align: center;">Hover Me...</h1>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="ground">
+        <div class="p1"></div>
+        <div class="ball">Ball</div>
+        <div class="p2"></div>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="tooltip" style="margin-left: 47%;"> Hover Me
+        <span class="tooltiptext">Infinite Ball 😅😂</span>
+    </div>
+
+    <br><br><br><br>
+
+    <div>
+        <img class="mhimage" src="images/moneyheist.jpg" alt="Sergio from Money Heist">
+    </div>
+
+    <br><br><br><br>
+
+    <div class="gptdiv">
+        <img src="images/ChatGPT.png" alt="CHATGPT" height="250px" class="gpt">
+        <p>ChatGPT is a large language model chatbot developed by OpenAI that can engage in conversational dialogue, answer questions, and generate various text formats like articles, essays, and code. It uses natural language processing to understand and respond to user prompts, acting as a tool for AI-assisted writing, brainstorming, and information retrieval. ChatGPT is a large language model chatbot developed by OpenAI that can engage in conversational dialogue, answer questions, and generate various text formats like articles, essays, and code. It uses natural language processing to understand and respond to user prompts, acting as a tool for AI-assisted writing, brainstorming, and information retrieval. ChatGPT is a large language model chatbot developed by OpenAI that can engage in conversational dialogue, answer questions, and generate various text formats like articles, essays, and code. It uses natural language processing to understand and respond to user prompts, acting as a tool for AI-assisted writing, brainstorming, and information retrieval. ChatGPT is a large language model chatbot developed by OpenAI that can engage in conversational dialogue, answer questions, and generate various text formats like articles, essays, and code. It uses natural language processing to understand and respond to user prompts, acting as a tool for AI-assisted writing, brainstorming, and information retrieval.ChatGPT is a large language model chatbot developed by OpenAI that can engage in conversational dialogue, answer questions, and generate various text formats like articles, essays, and code. It uses natural language processing to understand and respond to user prompts, acting as a tool for AI-assisted writing, brainstorming, and information retrieval. ChatGPT is a large language model chatbot developed by OpenAI that can engage in conversational dialogue, answer questions, and generate various text formats like articles, essays, and code. It uses natural language processing to understand and respond to user prompts, acting as a tool for AI-assisted writing, brainstorming, and information retrieval.</p>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="polaroid">
+        <img class="blurimg" src="images/moneyheist.jpg" alt="" style="width: 500px; display: block; margin: auto; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">
+        <div class="container2">
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 30px;">Sergio Marquina</p>
+        </div>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="polaroid2">
+        <img class="blurimgg" src="images/moneyheist.jpg" alt="" style="width: 500px; display: block; margin: auto; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">
+        <div class="container3">
+            <p class="pgold">Sergio Marquina</p>
+        </div>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="buttonhovermeimgdiv">
+        <span class="buttonhovernsee">Hover N See</span>
+        <img class="buttonhovermeimg" src="images/moneyheist.jpg" alt="">
+    </div>
+
+    <br><br><br><br>
+
+
+</body>
+</html>
